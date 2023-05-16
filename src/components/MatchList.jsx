@@ -1,9 +1,8 @@
 import React from "react";
 import Match from "./Match";
-import matchData from "../data/matchData";
 
 function MatchList(props) {
-  const oneMatch = matchData[1];
+  const oneMatch = props.matchData[1];
 
   return (
     <section className="PlayerList MatchList">
