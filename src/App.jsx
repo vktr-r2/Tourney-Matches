@@ -9,16 +9,22 @@ import playerData from "./data/playerData";
 import matchData from "./data/matchData"
 
 //Import Helpers
+import { preparePlayerData, addWinsToPlayers } from "./helpers/playerHelpers";
 
 
+//Declare App component
 function App() {
+
+  const playerDataArray = preparePlayerData(playerData);
+  const parsedPlayerData = addWinsToPlayers(playerDataArray, matchData);
+
   return (
     <div className="App">
       <h1>
         Tourney Matches{" "}
         <span>Where Coding and Tournaments found their Match!</span>
       </h1>
-      <PlayerList matchData={matchData} playerData={playerData}/>
+      <PlayerList playerData={parsedPlayerData}/>
       <MatchList matchData={matchData}/>
     </div>
   );
